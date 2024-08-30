@@ -19,6 +19,8 @@ export default function App() {
           <Route path="/product" element={<Product/>}>
             <Route path=":productID" element={<Product/>}/>
           </Route>
+          {/*<Route path="/cart-page" element={<Cart/>}/>
+          <Route path="/login" element={<Login/>}/> */}
         </Routes>
         <Footer/>
       </BrowserRouter>
