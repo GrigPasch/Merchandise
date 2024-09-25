@@ -1,6 +1,4 @@
-/* eslint-disable no-unused-vars */
-
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import logo from '../assets/logo.png'
 import user from '../assets/user.svg'
@@ -13,6 +11,21 @@ const Header = () => {
   
   const [menuOpened, setMenuOpened] = useState(false);
   const toggleMenu = () => setMenuOpened(!menuOpened);
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      if(window.scrollY > 0){  //Closes the menu when scrolling if menuOpened = true
+        if(menuOpened){
+          setMenuOpened(false);
+        }
+      }
+    }
+    window.addEventListener("scroll", handleScroll);
+    //Cleans up the event listener 
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    }
+  }, [menuOpened]) //Dependency that ensures the effect runs when menuOpened changes
 
   return (
     <header className='max-pad-container w-full z-50'>
@@ -20,7 +33,7 @@ const Header = () => {
         {/*logo*/}
         <Link to={'/'} className='flex items-center gap-x-2'>
           <img src={logo} alt='logoImg' height={31} width={31}/>
-          <span className='bold-24 hidden xs:flex'>Merchandise</span>
+          <span className='bold-24 hidden xs:flex'>Style Outlet</span>
         </Link>
           {/*Navbar and Buttons*/}
         <div className='flexCenter gap-x-4'>
@@ -31,7 +44,7 @@ const Header = () => {
           {/* Mobile Navigation Bar */}
           <div>
             <Navbar containerStyles={`${menuOpened ? "flex items-start flex-col gap-y-12 fixed top-20 right-8 p-12 bg-white rounded-3xl shadow-md w-64 medium-16 ring-1 ring-slate-900/5 transition-all duration-150 z-50" : 
-                                                     "flex items-start flex-col gap-y-12 fixed top-20 -right-[100%] p-12 bg-white rounded-3xl shadow-md w-64 medium-16 ring-1 ring-slate-900/5 transition-all duration-150 z-50"}`}/>
+                                                      "flex items-start flex-col gap-y-12 fixed top-20 -right-[100%] p-12 bg-white rounded-3xl shadow-md w-64 medium-16 ring-1 ring-slate-900/5 transition-all duration-150 z-50"}`}/>
           </div>
           {/* Menu buttons toggle */}
           <div className='flexBetween gap-x-3 sm:gap-x-2 bold-16'>
