@@ -1,8 +1,6 @@
-/* eslint-disable react/prop-types */
-
-
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import PropTypes from 'prop-types';
 
 const Navbar = ({containerStyles}) => {
   return (
@@ -22,5 +20,11 @@ const Navbar = ({containerStyles}) => {
     </nav>
   )
 }
+
+Navbar.propTypes = {
+  containerStyles: PropTypes.shape({
+      
+  }).isRequired,
+};
 
 export default Navbar

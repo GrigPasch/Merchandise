@@ -1,10 +1,9 @@
-/* eslint-disable react/prop-types */
-
 import React from 'react'
 import { VscSettings } from 'react-icons/vsc'
 import all_products from '../assets/all_products'
 import Item from '../components/Item'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types';
 
 const Category = ({banner, category}) => {
   return (
@@ -39,5 +38,14 @@ const Category = ({banner, category}) => {
     </section>
   )
 }
+
+Category.propTypes = {
+  banner: PropTypes.shape({
+      
+  }).isRequired,
+  category: PropTypes.shape({
+      
+  }).isRequired,
+};
 
 export default Category

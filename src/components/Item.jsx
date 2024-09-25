@@ -1,10 +1,8 @@
-/* eslint-disable react/prop-types */
-
 import { Link } from 'react-router-dom';
 import { RiShoppingCart2Line } from 'react-icons/ri'
+import PropTypes from 'prop-types';
 
-
-const Item = ({ id, name, image, old_price, new_price }) => {
+const Item = ({id, name, image, old_price, new_price}) => {
   return (
     <Link to={`/product/${id}`} className='bg-white p-4 rounded-xl relative' onClick={window.scrollTo(0, 0)}>
       <div className='flexCenter'>
@@ -24,5 +22,15 @@ const Item = ({ id, name, image, old_price, new_price }) => {
     </Link>
   )
 }
+
+Item.propTypes = ({
+    
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    old_price: PropTypes.number.isRequired,
+    new_price: PropTypes.number.isRequired,
+  }).isRequired;
+
 
 export default Item

@@ -1,5 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
-
 import React from 'react'
 import LATEST from '../assets/latest'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -33,7 +31,7 @@ const RelatedProducts = () => {
                 <img src={item.image} height={77} width={77} className='rounded-lg drop-shadow-xl'/>
                 <div className='flex flex-col gap-y-1'>
                   <h4 className='line-clamp-1 medium-16'>{item.name}</h4>
-                  <p className='line-clamp-1'>Random product description that I couldn't think off</p>
+                  <p className='line-clamp-1'>Random product description that I couldn&apos;t think off</p>
                   <div className='flexBetween'>
                     <div className='flexBetween gap-x-2 medium-16'>
                       <span>${item.new_price}</span>
