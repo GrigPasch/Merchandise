@@ -22,9 +22,7 @@ const Navbar = ({containerStyles}) => {
 }
 
 Navbar.propTypes = {
-  containerStyles: PropTypes.shape({
-      
-  }).isRequired,
+  containerStyles: PropTypes.string.isRequired,
 };
 
 export default Navbar
