@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import logo from '../assets/logo.png'
 import user from '../assets/user.svg'
 import Navbar from './Navbar'
 import { MdMenu, MdClose } from 'react-icons/md'
 import { RiShoppingCart2Line } from 'react-icons/ri'
+import { ShopContext } from '../context/ShopContext'
 
 
 const Header = () => {
   
   const [menuOpened, setMenuOpened] = useState(false);
   const toggleMenu = () => setMenuOpened(!menuOpened);
+  const {totalCartItems} = useContext(ShopContext);
   
   useEffect(() => {
     const handleScroll = () => {
@@ -55,10 +57,10 @@ const Header = () => {
             )}
 
             <div className='flexBetween sm:gap-x-6'>
-              <NavLink to={'/'} className={'flex'}>
+              <NavLink to={'/cart-page'} className={'flex'}>
                 <RiShoppingCart2Line className='p-2 h-10 w-10 hover:text-secondary'/>
                 <span className='relative flexCenter w-5 h-5 rounded-full bg-secondary text-primary medium-14 -top-2 right-3'>
-                  {0}
+                  {totalCartItems()}
                 </span>
               </NavLink>
               <NavLink to={'/'} className={'btn-secondary flexCenter gap-x-2 medium-16 rounded-xl'}>

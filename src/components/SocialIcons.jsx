@@ -8,7 +8,7 @@ const SocialIcons = () => {
             <RiYoutubeFill className='text-secondaryRed text-2xl hover:-translate-y-1 transition-all duration-500'/>
         </Link>
         <Link>
-            <RiInstagramLine className='text-white instagramColor text-2xl hover:-translate-y-1 transition-all duration-500 '/>
+            <RiInstagramLine className='text-white instagramColor text-2xl hover:-translate-y-1 transition-all duration-500 rounded-[25%]'/>
         </Link>
         <Link>
             <RiTwitterXLine className='text-white text-2xl hover:-translate-y-1 transition-all duration-500'/>
