@@ -63,7 +63,7 @@ const Header = () => {
                   {totalCartItems()}
                 </span>
               </NavLink>
-              <NavLink to={'/'} className={'btn-secondary flexCenter gap-x-2 medium-16 rounded-xl'}>
+              <NavLink to={'/login'} className={'btn-secondary flexCenter gap-x-2 medium-16 rounded-xl'}>
                 <img src={user} alt="" height={19} width={19}/>
                 Login
               </NavLink>
